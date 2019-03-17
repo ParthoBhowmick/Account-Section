@@ -1,0 +1,176 @@
+<html>
+<head>
+<link rel="stylesheet" href="w3schoolCSS.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<style>
+
+ a:hover {
+	display:block;
+	font-size:20px;
+	font-style:italic;
+	color:#FC0;
+	text-decoration:none;
+}
+
+.sback {
+  position: absolute;
+  margin-top:490px;
+  height: 100%;
+  width: 100%;
+  left:0px;
+  z-index:-99;
+  background-repeat:no-repeat;
+  background-size: 100% 90%;
+  background-image:url("back.png");
+}
+
+td {
+	padding: 15px;
+	color:white;
+}
+
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.menu1 {
+	background-color:#000;
+	float:left;
+}
+.fader
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left:0;
+  top:0;
+  z-index:-99;
+  background-repeat:no-repeat;
+  background-size: 100%  700px;
+}
+
+.footer{
+	background-color:black;
+	clear:both;
+	padding:2px;
+	margin-top:89%;
+}
+
+#foot {
+	color:white;
+	padding:2px;
+	font-family:"Comic Sans MS", cursive;
+	font-size:16px;
+	text-align:center;
+}
+</style>
+<script src="jquery-1.12.4.min.js">
+</script>
+</head>
+<body style="margin:0px;padding:0px;">
+<script>
+$(document).ready(function(){  // A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you. Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. Code included inside $( window ).load(function() { ... }) will run once the entire page (images or iframes), not just the DOM, is ready.
+  var count = 0;
+  var images = ["giffy1.gif","giffy4.gif","giffy3.gif","tt1.jpeg","tt.jpeg","giffy2.gif"];
+  var image = $(".fader");  //laad in target html div
+
+  image.css("background-image","url("+images[count]+")");
+
+  setInterval(function(){
+	count++;
+      image.fadeOut(0, function(){  
+      image.css("background-image","url("+images[count]+")");
+      image.fadeIn(0);  // The fadeIn() method gradually changes the opacity, for selected elements, from hidden to visible (fading effect)
+    });
+    if(count == 6)
+    {
+      image.css("background-image","url("+images[0]+")");
+	  count = 0;
+    }
+  },5000);
+});
+</script>
+<div class="fader">
+</div>
+<img src="ruet.png" class="w3-teal" style="width:65% ; height:110px; background-attachment:fixed; z-index:-1">
+<div style="float:right; padding-left:15px" class="w3-teal">
+<table>
+	<tr>
+		<td> <a href="staff.html" class="flt">Staff</a> </td>
+		<td> <a href="student.html" class="flt">Student</a> </td>
+		<td> <div class="w3-dropdown-hover">
+  			<img src="menuicon.png" style="height: 22px; width:22px;">
+			<button class="w3-btn w3-teal" style="margin:0px;padding:0px;">Menu</button>
+ 	  		<div class="w3-dropdown-content w3-border">
+    		<a href="http://localhost/assignment/login2.php" >Accounts</a>
+    		<a href="#" >Link 2</a>
+   	    	<a href="#" >Link 3</a>
+  			</div>
+			</div> </td>
+	</tr>
+
+	<tr>
+		<td><a href="study.html" class:"flt">Study</a></td>
+		<td><a href="research.html" class:"flt">Research</a></td>
+		<td><a href="seach.html" style="text-decoration:none;"> <img src="search.png" style="height: 22px; width:22px; margin-right:3px">Search</a></td>
+	</tr>
+	
+</table>
+</div>
+<div class="w3-container w3-lobster">
+<span class="w3-xxxlarge w3-teal" style="padding:15px; position: absolute; right: 22%;margin-top:12%;">World-class study,reasearch and lifestyle </span>
+</div>
+
+<div class="box" style="position:absolute; margin-top:30%; background-color:teal; padding:18px">
+	<div class="search" style="margin:0px; padding:0px; display:flex;flex-direction:row">
+		<input type="search" style="flex:1;padding:0.6em;border:0.3em solid; display:block; font:1.2em 'Montserrat Alternates'; border-color:#666; width:400px; height:40px;background-color:teal ;color:white; font-weight:bold"  id="search" placeholder="Search..." />
+		<button type="button" style="border:0.5em solid; border-color:#666;padding:0.6em 0.8em;;display:block;font:1.2em 'Montserrat Alternates'; margin:0px; height:72px;background-color:#666; font-weight:bold ; color:white"> <img src="search.png" style="height: 22px; width:22px; margin-right:3px"> Search Courses</button>
+		
+		<button type="button" style="margin-left:15px; border:0.5em solid; border-color:#666;padding:0.6em 0.8em;;display:block;font:1.2em 'Montserrat Alternates'; height:72px;background-color:#666; font-weight:bold ; color:white">  View all Courses</button>
+	</div>
+	
+	<div class="courses">
+		<table>
+			<tr>
+				<td> <a href="eee.html"> Elecctrical and Electronics Engineering </a> </td>
+				<td> <a href="cse.html"> Computer Scinece and Engineering </a> </td>
+				<td> <a href="me.html"> Mechanical Engineering </a> </td>
+			</tr>
+			<tr>
+				<td> <a href="ce.html"> Civil Engineering </a> </td>
+				<td> <a href="ipe.html"> Industrial Production Engineering </a> </td>
+				<td> <a href="gce.html"> Glass and Ceramic Engineering </a> </td>
+			</tr>
+			<tr>
+				<td> <a href="mte.html"> Mechatronics Enginnering </a> </td>
+				<td> <a href="urp.html"> Urban and Regional Planning </a></td>
+				<td> <a href="art.html"> Architecture </a>  </td>
+			</tr>
+		</table>
+	</div>
+	
+	<hr>
+	
+	<div class="last">
+		<table>
+			<tr>
+				<td> <a href="oc.html"> Online Course </a> </td>
+				<td> <a href="ug.html"> Undergraduate </a> </td>
+				<td> <a href="pg.html"> Postgradute </a> </td>
+			</tr>
+		</table>
+	</div>
+	
+</div>
+
+<div class="sback">	
+<img src="back.png">
+</div>
+
+<div class="footer"> <p id="foot"> COPYRIGHT | Rajshahi University Of Engineering And Technology | 2016 </p> </div> 
+</div>
+</body>
+</html>
